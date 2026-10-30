@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forja de héroes</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">Forja de héroes</a>
+
+        <nav>
+            <p>Crear personaje</p>
+            <p>Mis personajes</p>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="introduccion">
+            <h1>Da vida a tu aventurero</h1>
+            <p>Elige tu origen, reparte tus atributos y prepara tu equipo.</p>
+            <button type="button" id="guardar-personaje">Guardar personaje</button>
+        </section>
+
+        <section id="creador-personaje">
+            <h2>Tu personaje</h2>
+
+            <section id="datos-personaje">
+                <form id="formulario-personaje" action="#">
+                    <label for="nombre-personaje">Nombre</label>
+                    <input type="text" id="nombre-personaje" name="nombre"
+                        placeholder="Elige un nombre para tu personaje">
+
+                    <label for="raza-personaje">Elige una raza</label>
+                    <select id="raza-personaje" name="raza">
+                        <option value="">Selecciona una raza</option>
+                    </select>
+
+                    <label for="clase-personaje">Elige una clase</label>
+                    <select id="clase-personaje" name="clase">
+                        <option value="">Selecciona una clase</option>
+                    </select>
+                </form>
+            </section>
+
+            <section id="atributos-personaje">
+                <div>
+                    <h3>Atributos</h3>
+                    <p>
+                        Puntos disponibles:
+                        <span id="puntos-disponibles">4</span>
+                    </p>
+                </div>
+                <div id="atributo-fuerza" class="atributo">
+                    <!-- <img src="" alt="icono-fuerza"> -->
+                    <p>Fuerza</p>
+                    <button type="button" class="boton-atributo">-</button>
+                    <p id="valor-fuerza">12</p>
+                    <button type="button" class="boton-atributo">+</button>
+                </div>
+            </section>
+
+        </section>
+
+        <section id="ficha-personaje">
+            <h2>Ficha del personaje</h2>
+
+        </section>
+        <section id="catalogo-equipo">
+            <h2>Prepara tu equipo</h2>
+
+        </section>
+    </main>
+
+    <footer></footer>
+</body>
+
+</html>
