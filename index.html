@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forja de héroes</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">Forja de héroes</a>
+
+        <nav>
+            <p>Crear personaje</p>
+            <p>Mis personajes</p>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="introduccion">
+            <h1>Da vida a tu aventurero</h1>
+            <p>Elige tu origen, reparte tus atributos y prepara tu equipo.</p>
+            <p>D&D 5e · Reglas de 2014</p>
+            <button type="submit" id="guardar-personaje" form="formulario-personaje">Guardar personaje</button>
+        </section>
+
+        <section id="creador-personaje">
+            <form id="formulario-personaje" action="#">
+
+                <section id="identidad-personaje">
+                    <h2>Identidad</h2>
+
+                    <label for="nombre-personaje">Nombre del personaje</label>
+                    <input type="text" name="nombre" id="nombre-personaje">
+
+                    <label for="nombre-jugador">Nombre del jugador</label>
+                    <input type="text" name="jugador" id="nombre-jugador">
+
+                    <label for="raza-personaje">Raza</label>
+                    <select name="raza" id="raza-personaje">
+                        <option value="">Selecciona una raza</option>
+                    </select>
+
+                    <label for="clase-personaje">Clase</label>
+                    <select name="clase" id="clase-personaje">
+                        <option value="">Selecciona una clase</option>
+                    </select>
+
+                    <label for="trasfondo-personaje">Trasfondo</label>
+                    <select name="trasfondo" id="trasfondo-personaje">
+                        <option value="">Selecciona un trasfondo</option>
+                    </select>
+
+                    <label for="alineamiento-personaje">Alineamiento</label>
+                    <select name="alineamiento" id="alineamiento-personaje">
+                        <option value="">Selecciona alineamiento</option>
+                    </select>
+
+                    <p>
+                        Nivel:
+                        <span id="nivel-personaje">1</span>
+                    </p>
+                    <p>
+                        Puntos de experiencia:
+                        <span id="px-personaje">0</span>
+                    </p>
+
+                </section>
+
+                <section id="caracteristicas-personaje">
+                    <h2>Características</h2>
+
+                    <label for="inspiracion-personaje">Inspiración</label>
+                    <input type="checkbox" name="inspiracion" id="inspiracion-personaje">
+
+                    <p>
+                        Bonificador por competencia:
+                        <span id="bonificador-competencia-personaje">-</span>
+                    </p>
+
+                    <p>
+                        Sabiduría (Percepción) pasiva:
+                        <span id="percepcion-pasiva-personaje">-</span>
+                    </p>
+
+                    <div class="caracteristica">
+                        <label for="fuerza-personaje">Fuerza</label>
+                        <input type="number" name="fuerza" id="fuerza-personaje" min="3" max="18" step="1">
+                        <p>
+                            Modificador fuerza:
+                            <span id="modificador-fuerza">-</span>
+                        </p>
+                    </div>
+
+                    <div class="caracteristica">
+                        <label for="destreza-personaje">Destreza</label>
+                        <input type="number" name="destreza" id="destreza-personaje" min="3" max="18" step="1">
+                        <p>
+                            Modificador destreza:
+                            <span id="modificador-destreza">-</span>
+                        </p>
+                    </div>
+
+                    <div class="caracteristica">
+                        <label for="constitucion-personaje">Constitución</label>
+                        <input type="number" name="constitucion" id="constitucion-personaje" min="3" max="18" step="1">
+                        <p>
+                            Modificador constitución:
+                            <span id="modificador-constitucion">-</span>
+                        </p>
+                    </div>
+
+                    <div class="caracteristica">
+                        <label for="inteligencia-personaje">Inteligencia</label>
+                        <input type="number" name="inteligencia" id="inteligencia-personaje" min="3" max="18" step="1">
+                        <p>
+                            Modificador inteligencia:
+                            <span id="modificador-inteligencia">-</span>
+                        </p>
+                    </div>
+
+                    <div class="caracteristica">
+                        <label for="sabiduria-personaje">Sabiduría</label>
+                        <input type="number" name="sabiduria" id="sabiduria-personaje" min="3" max="18" step="1">
+                        <p>
+                            Modificador sabiduría:
+                            <span id="modificador-sabiduria">-</span>
+                        </p>
+                    </div>
+
+                    <div class="caracteristica">
+                        <label for="carisma-personaje">Carisma</label>
+                        <input type="number" name="carisma" id="carisma-personaje" min="3" max="18" step="1">
+                        <p>
+                            Modificador carisma:
+                            <span id="modificador-carisma">-</span>
+                        </p>
+                    </div>
+
+                </section>
+
+                <section id="competencias-personaje">
+                    <h2>Idiomas y otras competencias</h2>
+                    <h3>Idiomas</h3>
+                    <ul id="idiomas-personaje">
+                        <li>Sin especificar</li>
+                    </ul>
+
+                    <h3>Competencias de equipo</h3>
+                    <ul id="competencias-equipo">
+                        <li>Sin especificar</li>
+                    </ul>
+                </section>
+
+                <section id="combate-personaje">
+                    <h2>Combate</h2>
+                    <p>
+                        Clase de armadura:
+                        <span id="CA-personaje">-</span>
+                    </p>
+                    <p>
+                        Iniciativa:
+                        <span id="iniciativa-personaje">-</span>
+                    </p>
+                    <p>
+                        Velocidad:
+                        <span id="velocidad-personaje">-</span>
+                    </p>
+                    <div id="pg-personaje">
+                        <p>
+                            Puntos de golpe máximos:
+                            <span id="pgMax-personaje">-</span>
+                        </p>
+                        <p>
+                            Puntos de golpe actuales:
+                            <span id="pgAct-personaje">-</span>
+                        </p>
+                        <p>
+                            Puntos de golpe temporales:
+                            <span id="pgTemp-personaje">-</span>
+                        </p>
+                    </div>
+                    <div id="dadosGolpe-personaje">
+                        <p>
+                            Dados de golpe:
+                            <span id="dadosGolpe-total">-</span>d<span id="dadosGolpe-valor">-</span>
+                        </p>
+                    </div>
+                    <div id="salvacionesMuerte-personaje">
+                        <h3>Salvaciones contra la muerte</h3>
+                        <p>Éxitos</p>
+                        <p>Fallos</p>
+                    </div>
+                </section>
+
+                <section id="ataques-personaje">
+                    <h2>Ataques</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Bonificador de ataque</th>
+                                <th>Daño/Tipo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lista-ataques-personaje">
+
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="habilidades-personaje">
+                    <h2>Habilidades</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Habilidad</th>
+                                <th>Competencia</th>
+                                <th>Bonificador</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lista-habilidades-personaje">
+
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="rasgos-personaje">
+                    <h2>Rasgos y atributos</h2>
+
+                    <h3>Rasgos de raza</h3>
+                    <ul id="rasgos-raza">
+                        <li>Sin determinar</li>
+                    </ul>
+
+                    <h3>Rasgos de clase</h3>
+                    <ul id="rasgos-clase">
+                        <li>Sin determinar</li>
+                    </ul>
+
+                    <h3>Rasgos de trasfondo</h3>
+                    <ul id="rasgos-trasfondo">
+                        <li>Sin determinar</li>
+                    </ul>
+
+                </section>
+
+                <section id="tiradaSalvacion-personaje">
+                    <h2>Tiradas de salvación</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Característica</th>
+                                <th>Competencia</th>
+                                <th>Bonificador</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lista-tiradaSalvaciones-personaje">
+
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="equipo-personaje">
+                    <h2>Equipo e inventario</h2>
+                    <h3>Equipo equipado</h3>
+                    <ul id="equipo-equipado">
+                        <li>Sin objetos</li>
+                    </ul>
+
+                    <h3>Inventario</h3>
+                    <ul id="inventario-personaje">
+                        <li>Sin objetos</li>
+                    </ul>
+                </section>
+
+                <section id="magia-personaje">
+                    <h2>Magia</h2>
+                    <p id="estado-magia">
+                        Selecciona una clase para consultar sus capacidades mágicas.
+                    </p>
+
+                    <p>
+                        Clase lanzadora de conjuros:
+                        <span id="clase-magica-personaje">-</span>
+                    </p>
+                    <p>
+                        Aptitud mágica:
+                        <span id="aptitud-magica-personaje">-</span>
+                    </p>
+                    <p>
+                        CD tirada de salvación de conjuros:
+                        <span id="cd-conjuros-personaje">-</span>
+                    </p>
+                    <p>
+                        Bonificador de ataque de conjuros:
+                        <span id="Bonificador-conjuros-personaje">-</span>
+                    </p>
+
+                    <h3>Trucos</h3>
+                    <ul id="trucos-personaje">
+                        <li>Sin determinar</li>
+                    </ul>
+
+                    <h3>Conjuros conocidos</h3>
+                    <ul id="conjuros-personaje">
+                        <li>Sin determinar</li>
+                    </ul>
+                </section>
+
+                <section id="descripcion-personaje">
+                    <h2>Descripción del personaje</h2>
+                    <section id="apariencia-personaje">
+                        <h3>Apariencia</h3>
+                        <label for="edad-personaje">Edad (años)</label>
+                        <input type="number" name="edad" id="edad-personaje" min="0" step="1">
+
+                        <label for="altura-personaje">Altura (cm)</label>
+                        <input type="number" name="altura" id="altura-personaje" min="1" step="1">
+
+                        <label for="peso-personaje">Peso (kg)</label>
+                        <input type="number" name="peso" id="peso-personaje" min="0.1" step="0.1">
+
+                        <label for="ojos-personaje">Ojos</label>
+                        <input type="text" name="ojos" id="ojos-personaje">
+
+                        <label for="piel-personaje">Piel</label>
+                        <input type="text" name="piel" id="piel-personaje">
+
+                        <label for="pelo-personaje">Pelo</label>
+                        <input type="text" name="pelo" id="pelo-personaje">
+
+                        <label for="aspecto-personaje">Aspecto del personaje</label>
+                        <textarea name="aspecto" id="aspecto-personaje" rows="3"></textarea>
+                    </section>
+
+                    <section>
+                        <h3>Historia del personaje</h3>
+                        <label for="historia-personaje">Historia del personaje</label>
+                        <textarea name="historia" id="historia-personaje" rows="3"
+                            placeholder="Escribe la historia de tu personaje..."></textarea>
+                    </section>
+
+                    <section>
+                        <h3>Rasgos de personalidad</h3>
+                        <label for="personalidad-personaje">Personalidad del personaje</label>
+                        <textarea name="personalidad" id="personalidad-personaje" rows="3"
+                            placeholder="Escribe rasgos de personalidad de tu personaje..."></textarea>
+                        <label for="ideales-personaje">Ideales</label>
+                        <textarea name="ideales" id="ideales-personaje" rows="3"></textarea>
+                        <label for="vinculos-personaje">Vínculos</label>
+                        <textarea name="vinculos" id="vinculos-personaje" rows="3"></textarea>
+                        <label for="defectos-personaje">Defectos</label>
+                        <textarea name="defectos" id="defectos-personaje" rows="3"></textarea>
+                    </section>
+
+                </section>
+            </form>
+        </section>
+
+    </main>
+
+    <footer></footer>
+</body>
+
+</html>
