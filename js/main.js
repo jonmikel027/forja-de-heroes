@@ -12,7 +12,6 @@ const selectorAlineamientos = document.getElementById("alineamiento-personaje");
 
 
 /* 1.2 Funciones de carga */
-
 async function cargarRazas() {
     const urlRazas = "https://www.dnd5eapi.co/api/2014/races";
     const razasAPI = await cargarDatos(urlRazas);
@@ -106,3 +105,72 @@ cargarRazas();
 cargarClases();
 cargarTrasfondos();
 cargarAlineamientos();
+
+
+/* 2. CARACTERÍSTICAS */
+
+/* 2.1 Referencias */
+const campoFuerza = document.getElementById("fuerza-personaje");
+const campoModificadorFuerza = document.getElementById("modificador-fuerza");
+
+const campoDestreza = document.getElementById("destreza-personaje");
+const campoModificadorDestreza = document.getElementById("modificador-destreza");
+
+const campoConstitucion = document.getElementById("constitucion-personaje");
+const campoModificadorConstitucion = document.getElementById("modificador-constitucion");
+
+const campoInteligencia = document.getElementById("inteligencia-personaje");
+const campoModificadorInteligencia = document.getElementById("modificador-inteligencia");
+
+const campoSabiduria = document.getElementById("sabiduria-personaje");
+const campoModificadorSabiduria = document.getElementById("modificador-sabiduria");
+
+const campoCarisma = document.getElementById("carisma-personaje");
+const campoModificadorCarisma = document.getElementById("modificador-carisma");
+
+/* 2.2 Funciones */
+function calcularModificador(valor) {
+    const modificador = Math.floor((valor - 10) / 2);
+    return modificador;
+}
+
+function cambiarModificador(campo, campoModificador) {
+    if (campo.value === "") {
+        campoModificador.textContent = "";
+        return;
+    }
+
+    const valor = Number(campo.value);
+    const modificador = calcularModificador(valor);
+    if (modificador >= 0) {
+        campoModificador.textContent = "+" + modificador;
+    }
+    else {
+        campoModificador.textContent = modificador;
+    }
+}
+
+/* 2.3 Acciones */
+campoFuerza.addEventListener("input", () => {
+    cambiarModificador(campoFuerza, campoModificadorFuerza)
+})
+
+campoDestreza.addEventListener("input", () => {
+    cambiarModificador(campoDestreza, campoModificadorDestreza)
+})
+
+campoConstitucion.addEventListener("input", () => {
+    cambiarModificador(campoConstitucion, campoModificadorConstitucion)
+})
+
+campoInteligencia.addEventListener("input", () => {
+    cambiarModificador(campoInteligencia, campoModificadorInteligencia)
+})
+
+campoSabiduria.addEventListener("input", () => {
+    cambiarModificador(campoSabiduria, campoModificadorSabiduria)
+})
+
+campoCarisma.addEventListener("input", () => {
+    cambiarModificador(campoCarisma, campoModificadorCarisma)
+})
